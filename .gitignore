@@ -1,0 +1,4 @@
+data/standard_oct22frl_xml.xml
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
