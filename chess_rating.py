@@ -108,8 +108,8 @@ def bin_counts(df: pd.DataFrame, bins: list, bin_centers: list) -> pd.DataFrame:
     if 'rating' not in df.keys():
         raise ValueError("Incorrect input format; 'rating' must be a column in the input dataframe")
 
-    # bin les ratings selon les bins et bin_centers
-    binned = pd.cut(df['rating'], bins=bins, labels=bin_centers)
+    # bin les ratings selon les bins et bin_centers [left, right)
+    binned = pd.cut(df['rating'], bins=bins, labels=bin_centers, right=False)
 
     # compte le nombre de joueurs par bin
     hist = binned.value_counts().reset_index()
